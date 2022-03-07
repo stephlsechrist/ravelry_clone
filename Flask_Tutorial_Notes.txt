@@ -1,0 +1,20 @@
+    
+  Writing if statements in .html with flask
+    {% if name == "Tim" %}
+    Hi Tim!
+    {% else %}
+    not Tim
+    {% endif %} -->
+
+  Writing for statements in .html with flask
+    {% for x in [1,2,3,4] %}
+    {{x}}
+    {% endfor %}
+
+  To inherit templates, will use base template but overrides using 
+  {% block whatever %}{% endblock %}
+
+  What is hashing?
+    Never want to store password in plain text, but you need some way to determine that user enters correct PW
+    essentially a function that cannot be reversed/inversed (one way function)
+    given some x, you'll always get same y. but given some y, won't get x

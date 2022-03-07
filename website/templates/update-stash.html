@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+{% block title %}Update Stash{% endblock %}
+{% block content %}
+    {% block header %}{% endblock %}
+    <h1 align="center">Add a Yarn</h1>
+    <form method='POST'>
+        <div class="form-group">
+            <label for="brand">Brand</label>
+            <input type="text" id="brand" name="brand" class="form-control" placeholder="Enter brand"/>
+            <label for="color">Color</label>
+            <input type="text" id="color" name="color" class="form-control" placeholder="Enter color"/>
+            <label for="weight">Weight</label>
+            <input type="text" id="weight" name="weight" class="form-control" placeholder="Enter weight (i.e. worsted, aran, etc.)"/>
+            <label for="material">Material (optional)</label>
+            <input type="text" id="material" name="material" class="form-control" placeholder="Enter material"/>
+            <label for="amount">Amount in Yards (optional)</label>
+            <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount in yards"/>
+            <br />
+            <div align="center">
+                <button class="btn btn-primary" type="submit">Add to Stash</button>
+            </div>
+        </div>
+    </form>
+    <br/ >
+    <div align="center">
+        <a href="/stash">
+        <button type="button" class="btn btn-secondary">Back to Stash</button>
+        </a>
+    </div>
+    <br/ >
+
+    {{ super() }}
+{% endblock %}
+{% block needles_contents %}
+{% endblock %}

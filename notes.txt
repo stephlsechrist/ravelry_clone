@@ -1,0 +1,32 @@
+To-Do
+- DB models created
+- views to be implemented
+	- /home page has a couple divs that display stash and needles
+		with welcome 
+		- can get to /stash, /needles
+	- /stash
+		displays stash
+		- can get to /update-stash, /
+		2 buttons: add yarn, back
+		each yarn has dropdown button w/ Delete, Update
+		update goes to new page 
+	- /update-stash
+		hmm... get yarn.id and figure out how to change a value 			associated with that id in DB
+	- /needles
+		displays needles
+		- can get to /update-needles, /
+		2 buttons: add needle, back
+		each needle has dropdown button w/ Delete, Update
+	- /update-needles
+		same as /update-stash
+		
+- create way to add needle and yarn for testing 
+- then make it pretty
+
+
+*** add later
+pattern
+	name
+	instructions
+
+search function

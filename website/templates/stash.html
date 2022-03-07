@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{% block title %}Stash{% endblock %}
+{% block head %}
+    <h3 align="center">
+        {{user.email}}'s Stash    
+    </h3>
+{% endblock %}
+{% block content %}
+    {{ super() }}
+    {% block needles_contents %}
+    {% endblock %}
+    <div align="center">
+        <a href="/update-stash">
+        <button type="button" class="btn btn-secondary">Add to Stash</button>
+        </a>
+    </div>
+    <br/ >
+    <div align="center">
+        <a href="/home">
+        <button type="button" class="btn btn-secondary">Back to Home</button>
+        </a>
+    </div>
+{% endblock %}
