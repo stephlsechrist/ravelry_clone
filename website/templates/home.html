@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block head %}
-    <h3 align="center">
+    <h2 align="center">
         Welcome, {{user.email}}!
-    </h3>
+    </h2>
+    <br/ ></br/ >
 {% endblock %}
 {% block content %}
     {% block stash_contents %}
-        <div id="stash">
+        <div align="center" id="stash">
+            <h3>Stash</h3>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -33,10 +35,26 @@
         </div>
     {% endblock %}
     {% block needles_contents %}
-        <div id="needles">
-            <h4>Home Needles</h4>
-            {% for yarn in stash %}
-                    <!-- display needles -->
-            {% endfor %}
+    <div align="center" id="stash">
+        <h3>Needle Inventory</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Gauge</th>
+                <th scope="col">Type</th>
+                <th scope="col">Length (inches)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for needle in needles %}
+                    <tr>
+                        <td class="c1">{{needle.gauge}}</td>
+                        <td class="c2">{{needle.type}}</td>
+                        <td class="c3">{{needle.length}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     {% endblock%}
 {% endblock %}

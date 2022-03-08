@@ -49,3 +49,31 @@ def update_stash():
             return redirect(url_for('views.stash'))
     
     return render_template("update-stash.html", user=current_user, stash=stash)
+
+@views.route("/needles")
+@login_required
+def needles():
+    needles=Needle.query.all()
+    return render_template("needles.html", user=current_user, needles=needles)
+    
+@views.route("/update-needles", methods=['GET', 'POST'])
+@login_required
+def update_needles():
+    needles = Needle.query.all()
+    
+    if request.method == "POST":
+        gauge = request.form.get('gauge')
+        type = request.form.get('type')
+        length = request.form.get('length')
+        if not gauge:
+            flash('Gauge cannot be empty', category='error')
+        elif not type:
+            flash('Type cannot be empty', category='error')
+        else:
+            needle = Needle(gauge=gauge, length=length, type=type, user=current_user.id)
+            db.session.add(needle)
+            db.session.commit()
+            flash('Needle added!', category='success')
+            return redirect(url_for('views.needles'))
+    
+    return render_template("update-needles.html", user=current_user, needles=needles)

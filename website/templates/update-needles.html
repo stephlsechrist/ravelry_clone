@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+{% block title %}Update Needle Inventory{% endblock %}
+{% block content %}
+    {% block header %}{% endblock %}
+    <h1 align="center">Add Needles</h1>
+    <form method='POST'>
+        <div class="form-group">
+            <label for="gauge">Gauge</label>
+            <input type="number" id="gauge" name="gauge" class="form-control" placeholder="Enter gauge"/>
+            <label for="type">Type</label>
+            <input type="text" id="type" name="type" class="form-control" placeholder="Enter type (i.e. circular or DP)"/>
+            <label for="length">Length (optional)</label>
+            <input type="number" id="length" name="length" class="form-control" placeholder="Enter length"/>
+             <br />
+            <div align="center">
+                <button class="btn btn-primary" type="submit">Add to Needle Inventory</button>
+            </div>
+        </div>
+    </form>
+    <br/ >
+    <div align="center">
+        <a href="/needles">
+        <button type="button" class="btn btn-secondary">Back to Needles</button>
+        </a>
+    </div>
+    <br/ >
+
+    {{ super() }}
+{% endblock %}
+{% block stash_contents %}
+{% endblock %}
